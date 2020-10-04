@@ -5,7 +5,7 @@
   </a>
 </p>
 
-> Personal blog built ontop of the Next.js [starter template](https://nextjs.org/learn). The `master` branch is currently deployed to https://blog.mwesterby.vercel.app/.
+> Personal blog built ontop of the Next.js [starter template](https://nextjs.org/learn). The `master` branch is currently deployed to https://michaelwesterby.com.
 
 ## Install
 
