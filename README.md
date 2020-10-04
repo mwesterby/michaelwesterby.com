@@ -1,13 +1,11 @@
-<h1 align="center">Welcome to Blog 👋</h1>
+<h1 align="center">Blog 👋</h1>
 <p>
   <a href="https://www.npmjs.com/package/Blog" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/Blog.svg">
   </a>
 </p>
 
-> Personal blog built ontop of the Next.js starter template.
-
-### 🏠 [Homepage](https://blog.mwesterby.vercel.app/)
+> Personal blog built ontop of the Next.js [starter template](https://nextjs.org/learn). The `master` branch is currently deployed to https://blog.mwesterby.vercel.app/.
 
 ## Install
 
@@ -25,7 +23,6 @@ npm run dev
 
 👤 **Michael Westerby**
 
-* Website: https://blog.mwesterby.vercel.app/
 * Github: [@mwesterby](https://github.com/mwesterby)
 
 ## Show your support
