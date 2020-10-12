@@ -1,0 +1,19 @@
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  overflow: hidden;
+}
+
+.navbarItem {
+  float: right;
+}
+
+.navbarLink {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
