@@ -46,10 +46,17 @@
 
 .listItem {
   margin: 0 0 1.25rem;
+  font-weight: normal;
+}
+
+.listItemHeading {
+  margin: 0 0 1.25rem;
+  font-weight: bold;
 }
 
 .lightText {
   color: #999;
+  font-weight: normal;
 }
 
 .backTo {
