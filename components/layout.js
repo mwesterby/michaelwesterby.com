@@ -4,7 +4,7 @@ import Footer from './footer'
 import Navbar from './navbar'
 import Banner from './banner'
 
-const name = 'Michael Westerby'
+const name = 'Michael 💩 Westerby'
 export const siteTitle = name
 
 export default function Layout({ children, home }) {

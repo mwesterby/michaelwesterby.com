@@ -11,7 +11,8 @@ export default function Footer() {
       <footer className={styles.footer}>
         <a href={`https://github.com/${github}`} target="_blank">GitHub</a>{spacer}
         <a href={`https://www.linkedin.com/in/${linkedin}`} target="_blank">LinkedIn</a>{spacer}
-        <a href={`https://medium.com/${medium}`} target="_blank">Medium</a>
+        <a href={`https://medium.com/${medium}`} target="_blank">Medium</a>{spacer}
+        <a href={`#`} target="_blank">💩</a>
       </footer>
   )
 }

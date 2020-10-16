@@ -9,7 +9,7 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Computer Science graduate, IBM Software Engineer.</p>
+        <p>Computer Sc💩ience graduate, IBM Software Engineer.</p>
       </section>
     </Layout>
   )
