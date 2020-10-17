@@ -4,6 +4,33 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedProjectsData } from '../lib/projects'
 import Date from '../components/date'
 
+
+function Project (project) {
+  const { 
+    id,
+    startDate,
+    endDate,
+    title,
+    contentHtml,
+    link
+  } = project
+
+  return (
+    <li className={utilStyles.listItem} key={id}>
+      <div className={utilStyles.listItemHeading}><a className={utilStyles.colorInherit} href={link} target="_blank">{title}</a></div>
+      <small className={utilStyles.lightText}>
+        <Date dateString={startDate} dateFormat={'LLLL yyyy'} /> - <Date dateString={endDate} dateFormat={'LLLL yyyy'} />
+      </small>
+      <small>
+        <ul className={utilStyles.list}>
+          <li className={utilStyles.listItem} dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        </ul>
+        <a href={link} target="_blank">Code</a>
+      </small>
+    </li>
+  )
+}
+
 export default function Projects({ allProjectsData }) {
   return (
     <Layout>
@@ -13,19 +40,8 @@ export default function Projects({ allProjectsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h1 className={utilStyles.headingXL}>Projects</h1>
         <ul className={utilStyles.list}>
-        {allProjectsData.map(({ id, startDate, endDate, title, contentHtml }) => (
-            <li className={utilStyles.listItemHeading} key={id}>
-              {title}
-              <br />
-              <small className={utilStyles.lightText}>
-               <Date dateString={startDate} dateFormat={'LLLL yyyy'} /> - <Date dateString={endDate} dateFormat={'LLLL yyyy'} />
-              </small>
-              <small>
-              <ul className={utilStyles.list}>
-                <li className={utilStyles.listItem} dangerouslySetInnerHTML={{ __html: contentHtml }} />
-              </ul>
-              </small>
-            </li>
+        {allProjectsData.map((project) => (
+            Project(project)
           ))}
           </ul>
       </section>
