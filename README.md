@@ -1,4 +1,4 @@
-<h1 align="center">Blog 👋</h1>
+<h1 align="center">michaelwesterby.com 👋</h1>
 <p>
   <a href="https://www.npmjs.com/package/Blog" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/Blog.svg">
