@@ -20,7 +20,7 @@ For this tutorial I am going to be using the APIs provided by reqres.in to creat
 
 Step one is to [login to API Connect Test and Monitor](https://us-east.apitest.apiconnect.ibmcloud.com/app/). The first page you'll see is known as the **_HTTP Client_**. Here you can execute REST requests to different API endpoints, similar to as you would in Postman or Insomnia. You can choose your HTTP method from the dropdown, define your request URL, and add any headers or a body that's required for your request.
 
-![The HTTP Client](../../public/images/blogs/api-testing/httpClient.png "The HTTP Client")
+![The HTTP Client](/images/blogs/api-testing/httpClient.png "The HTTP Client")
 
 For my first test I want to assert I receive the correct response when performing a `GET` request to `https://reqres.in/api/users/1`. Typing this URL into the `Request url` box and hitting `Send` will execute the request. Upon receiving the response, Test and Monitor will display the result of this as parsed JSON below.
 
