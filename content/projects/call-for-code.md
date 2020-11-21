@@ -5,4 +5,4 @@ endDate: '2020-09-30'
 link: 'https://github.com/project-reunite/reunite'
 ---
 
-I, along with four other graduates took part in IBM’s Call for Code hackathon, an event focused on designing technical solutions to help victims of natural disasters. Here I was responsible for designing and developing part of a React front end, alongside promotional videos, for an application to help reunite lost loved ones. Our solution was well received and placed us in the top five of the world-wide competition out of 138 teams and subsequently demoed at IBM’s Think Summit event in London.
+Entry to IBM's Call for Code hackathon which placed 1st in the UK competition, and 5th out of 132 teams in the global contest. This was a mobile app to help reunite lost loved ones following a natural disasters.
