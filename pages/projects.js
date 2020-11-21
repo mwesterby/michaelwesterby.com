@@ -19,7 +19,7 @@ function Project (project) {
     <li className={utilStyles.listItem} key={id}>
       <div className={utilStyles.listItemHeading}><a className={utilStyles.colorInherit} href={link} target="_blank">{title}</a></div>
       <small className={utilStyles.lightText}>
-        <Date dateString={startDate} dateFormat={'LLLL yyyy'} /> - <Date dateString={endDate} dateFormat={'LLLL yyyy'} />
+        <Date dateString={startDate} dateFormat={'LLLL yyyy'} /> - {(endDate == 'Present') ? endDate : <Date dateString={endDate} dateFormat={'LLLL yyyy'} /> }
       </small>
       <small>
         <ul className={utilStyles.list}>

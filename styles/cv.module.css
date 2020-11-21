@@ -1,0 +1,31 @@
+.heading {
+  font-size: 1.7rem;
+}
+
+.subheadingXL {
+  margin-bottom: 0px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.subheading {
+  margin-bottom: 0px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+.date {
+  margin-top: 0px;
+  font-style: italic;
+  color: #999;
+  font-size: smaller;
+}
+
+.body {
+  font-size: smaller;
+}
+
+.indent {
+  margin-left: 0.5rem;
+}
