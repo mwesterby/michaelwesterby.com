@@ -15,9 +15,8 @@ function NavLink({label, address}) {
 export default function Navbar({home}) {
   return (
     <div className={styles.navbar}>
-      <NavLink label='Contact' address='/contact'/>
-      <NavLink label='Blog' address='/posts'/>
       <NavLink label='CV' address='/cv'/>
+      <NavLink label='Blog' address='/posts'/>
       <NavLink label='Projects' address='/projects'/>
       {home ? "" : <NavLink label='Home' address='/'/>}
     </div>
