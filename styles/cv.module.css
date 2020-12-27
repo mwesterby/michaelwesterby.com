@@ -24,8 +24,18 @@
 
 .body {
   font-size: smaller;
+  margin-bottom: 0px;
 }
 
 .indent {
   margin-left: 0.5rem;
+}
+
+.language {
+  font-size: small;
+  background-color: #ecf0f1;
+  width: min-content;
+  padding: 0.2rem;
+  display: inline;
+  border-radius: 5px;
 }
