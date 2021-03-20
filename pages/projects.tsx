@@ -3,7 +3,7 @@ import Head from 'next/head'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedProjectsData } from '../lib/projects'
 import Date from '../components/date'
-
+import { GetStaticProps } from 'next'
 
 function Project (project) {
   const { 
@@ -33,7 +33,7 @@ function Project (project) {
 
 export default function Projects({ allProjectsData }) {
   return (
-    <Layout>
+    <Layout home>
       <Head>
         <title>{siteTitle} | Projects</title>
       </Head>
@@ -49,7 +49,9 @@ export default function Projects({ allProjectsData }) {
   )
 }
 
-export async function getStaticProps() {
+
+
+export const getStaticProps: GetStaticProps = async (context) => {
   const allProjectsData = await getSortedProjectsData()
   return {
     props: {

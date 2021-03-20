@@ -4,10 +4,11 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
+import { GetStaticProps } from 'next'
 
 export default function Posts({ allPostsData }) {
   return (
-    <Layout>
+    <Layout home>
       <Head>
         <title>{siteTitle} | Blog</title>
       </Head>
@@ -31,11 +32,11 @@ export default function Posts({ allPostsData }) {
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = await getSortedPostsData()
-  return {
-    props: {
-      allPostsData
+    return {
+      props: {
+        allPostsData
+      }
     }
-  }
 }
