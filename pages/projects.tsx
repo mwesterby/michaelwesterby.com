@@ -6,7 +6,6 @@ import Date from '../components/date'
 import { GetStaticProps } from 'next'
 
 
-
 type Project = {
   id: string,
   startDate: string,
@@ -45,10 +44,9 @@ function Project (project: Project) {
 }
 
 
-
 export default function Projects({ allProjectsData } : {allProjectsData: Projects}) {
   return (
-    <Layout home=''>
+    <Layout>
       <Head>
         <title>{siteTitle} | Projects</title>
       </Head>
@@ -63,7 +61,6 @@ export default function Projects({ allProjectsData } : {allProjectsData: Project
     </Layout>
   )
 }
-
 
 
 export const getStaticProps: GetStaticProps = async (context) => {

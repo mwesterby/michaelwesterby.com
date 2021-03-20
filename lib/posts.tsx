@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
+import { PostData } from '../pages/posts'
 
 const postsDirectory = path.join(process.cwd(), 'content/posts')
 

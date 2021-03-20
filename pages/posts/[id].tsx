@@ -5,15 +5,11 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import { PostData } from '../posts'
 
-export default function Post({ postData }: {postData: {
-  id: string;
-  contentHtml: string;
-  title: any;
-  date: any;
-}}) {
+export default function Post({ postData }: {postData: PostData}) {
   return (
-    <Layout home=''>
+    <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -48,7 +44,7 @@ type Params = {
 }
 
 export const getStaticProps = async ({params}: Params) => {
-  const postData = await getPostData(params.id)
+  const postData: PostData = await getPostData(params.id)
   return {
     props: {
       postData

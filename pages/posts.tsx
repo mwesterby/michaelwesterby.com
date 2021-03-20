@@ -6,13 +6,16 @@ import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
 
-export default function Posts({ allPostsData }: {allPostsData: {
+export type PostData = {
   id: string;
-  title: any;
-  date: any;
-  }[]}) {
+  contentHtml: string;
+  title: string;
+  date: string;
+}
+
+export default function Posts({ allPostsData }: {allPostsData: PostData[]}) {
   return (
-    <Layout home=''>
+    <Layout>
       <Head>
         <title>{siteTitle} | Blog</title>
       </Head>
