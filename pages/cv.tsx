@@ -6,7 +6,7 @@ import cvStyles from '../styles/cv.module.css'
 export default function CV() {
 
   return (
-    <Layout>
+    <Layout home>
       <Head>
         <title>{siteTitle} | CV</title>
       </Head>
