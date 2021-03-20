@@ -5,8 +5,7 @@ import { getSortedProjectsData } from '../lib/projects'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
 
-
-type Project = {
+export type Project = {
   id: string,
   startDate: string,
   endDate: string,

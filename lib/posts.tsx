@@ -3,7 +3,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
-import { PostData } from '../pages/posts'
 
 const postsDirectory = path.join(process.cwd(), 'content/posts')
 
@@ -35,11 +34,7 @@ export async function getSortedPostsData() {
 
   // Sort posts by date
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
+    return a.date < b.date ? 1 : -1;
   })
 }
 
@@ -81,8 +76,7 @@ export async function getPostData(id: string) {
   .process(matterResult.content)
   const contentHtml = processedContent.toString()
 
-  const title = matterResult.data.title;
-  const date = matterResult.data.date;
+  const {title, date} = matterResult.data;
 
   // Combine the data with the id
   return {
