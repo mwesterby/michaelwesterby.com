@@ -21,8 +21,7 @@ export async function getSortedPostsData() {
     const matterResult = matter(fileContents)
 
     // Retrieve post metadata
-    const title = matterResult.data.title;
-    const date = matterResult.data.date;
+    const {title, date} = matterResult.data;
 
     // Combine the data with the id
     return {
