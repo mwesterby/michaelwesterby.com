@@ -3,9 +3,20 @@ import Head from 'next/head'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedProjectsData } from '../lib/projects'
 import Date from '../components/date'
+import { GetStaticProps } from 'next'
 
+export type Project = {
+  id: string,
+  startDate: string,
+  endDate: string,
+  title: string,
+  contentHtml: string,
+  link: string
+}
 
-function Project (project) {
+type Projects = Project[];
+
+function Project (project: Project) {
   const { 
     id,
     startDate,
@@ -31,7 +42,8 @@ function Project (project) {
   )
 }
 
-export default function Projects({ allProjectsData }) {
+
+export default function Projects({ allProjectsData } : {allProjectsData: Projects}) {
   return (
     <Layout>
       <Head>
@@ -49,7 +61,8 @@ export default function Projects({ allProjectsData }) {
   )
 }
 
-export async function getStaticProps() {
+
+export const getStaticProps: GetStaticProps = async (context) => {
   const allProjectsData = await getSortedProjectsData()
   return {
     props: {

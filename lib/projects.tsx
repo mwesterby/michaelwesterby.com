@@ -28,20 +28,21 @@ export async function getSortedProjectsData() {
       .process(matterResult.content)
       const contentHtml = processedContent.toString()
 
+      const {title, startDate, endDate, link} = matterResult.data;
+
       // Combine the data with the id
       allProjectsData.push({
         id,
         contentHtml,
-        ...matterResult.data
+        title,
+        startDate,
+        endDate,
+        link
       })
   }
 
   // Sort projects by date
   return allProjectsData.sort((a, b) => {
-    if (a.startDate < b.startDate) {
-      return 1
-    } else {
-      return -1
-    }
+    return a.startDate < b.startDate ? 1 : -1;
   })
 }

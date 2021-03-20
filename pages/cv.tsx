@@ -18,7 +18,7 @@ export default function CV() {
           <h3 className={cvStyles.subheading}>Software Engineer - CICS</h3>
           <p className={cvStyles.date}>September 2020 - Present</p>
           <p className={cvStyles.body}>Software developer and tester for the <a href='https://www.ibm.com/uk-en/products/cics-transaction-server'>CICS Transaction Server </a>on z/OS.</p>
-          <p className={cvStyles.language}>Java</p> {/* <p className={cvStyles.language}>Python</p> */}
+          <p className={cvStyles.language}>Java</p> <p className={cvStyles.language}>Python</p>
 
           <h3 className={cvStyles.subheading}>Software Engineer - API Connect</h3>
           <p className={cvStyles.date}>September 2018 - September 2020</p>
