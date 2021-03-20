@@ -6,9 +6,14 @@ import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
-export default function Post({ postData }) {
+export default function Post({ postData }: {postData: {
+  id: string;
+  contentHtml: string;
+  title: any;
+  date: any;
+}}) {
   return (
-    <Layout home>
+    <Layout home=''>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -36,7 +41,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+type Params = {
+	params: {
+		id: string
+	}
+}
+
+export const getStaticProps = async ({params}: Params) => {
   const postData = await getPostData(params.id)
   return {
     props: {

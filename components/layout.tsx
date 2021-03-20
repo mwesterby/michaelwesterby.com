@@ -7,7 +7,7 @@ import Banner from './banner'
 const name = 'Michael Westerby'
 export const siteTitle = name
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home }: {children: React.ReactNode, home: string}) {
   return (
     <>
       <Navbar home={home}/>

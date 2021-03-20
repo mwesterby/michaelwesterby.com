@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <Layout home>
+    <Layout home='home'>
       <Head>
         <title>{siteTitle}</title>
       </Head>

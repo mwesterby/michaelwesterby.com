@@ -2,7 +2,7 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import styles from '../styles/banner.module.css'
 
-export default function Banner({home, name}) {
+export default function Banner({home, name}: {home: string, name: string}) {
   const homeBanner = (<>
     <img
       src="/images/profile.jpg"

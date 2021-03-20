@@ -5,7 +5,20 @@ import { getSortedProjectsData } from '../lib/projects'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
 
-function Project (project) {
+
+
+type Project = {
+  id: string,
+  startDate: string,
+  endDate: string,
+  title: string,
+  contentHtml: string,
+  link: string
+}
+
+type Projects = Project[];
+
+function Project (project: Project) {
   const { 
     id,
     startDate,
@@ -31,9 +44,11 @@ function Project (project) {
   )
 }
 
-export default function Projects({ allProjectsData }) {
+
+
+export default function Projects({ allProjectsData } : {allProjectsData: Projects}) {
   return (
-    <Layout home>
+    <Layout home=''>
       <Head>
         <title>{siteTitle} | Projects</title>
       </Head>

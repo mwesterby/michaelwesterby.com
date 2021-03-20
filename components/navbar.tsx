@@ -1,7 +1,7 @@
 import styles from '../styles/navbar.module.css'
 import Link from 'next/link'
 
-function NavLink({label, address}) {
+function NavLink({label, address}: {label: string, address: string}) {
   const home = label === 'Home'
   return (
     <div className={home ? "" : styles.navbarItem}>
@@ -12,7 +12,7 @@ function NavLink({label, address}) {
   )
 }
 
-export default function Navbar({home}) {
+export default function Navbar({home}: {home: string}) {
   return (
     <div className={styles.navbar}>
       <NavLink label='CV' address='/cv'/>
