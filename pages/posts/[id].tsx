@@ -8,7 +8,7 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 
 export default function Post({ postData }) {
   return (
-    <Layout>
+    <Layout home>
       <Head>
         <title>{postData.title}</title>
       </Head>

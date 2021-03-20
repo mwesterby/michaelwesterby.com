@@ -20,12 +20,20 @@ export async function getSortedPostsData() {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
 
+    // Retrieve post metadata
+    const title = matterResult.data.title;
+    const date = matterResult.data.date;
+
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data
+      title,
+      date
     }
   })
+
+  // console.log(allPostsData);
+
   // Sort posts by date
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {

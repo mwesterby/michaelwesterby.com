@@ -28,11 +28,20 @@ export async function getSortedProjectsData() {
       .process(matterResult.content)
       const contentHtml = processedContent.toString()
 
+      
+      const title = matterResult.data.title;
+      const startDate = matterResult.data.startDate;
+      const endDate = matterResult.data.endDate;
+      const link = matterResult.data.link;
+
       // Combine the data with the id
       allProjectsData.push({
         id,
         contentHtml,
-        ...matterResult.data
+        title,
+        startDate,
+        endDate,
+        link
       })
   }
 
