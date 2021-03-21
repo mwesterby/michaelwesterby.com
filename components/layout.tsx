@@ -1,16 +1,16 @@
-import Head from 'next/head'
-import styles from '../styles/layout.module.css'
-import Footer from './footer'
-import Navbar from './navbar'
-import Banner from './banner'
+import Head from 'next/head';
+import styles from '../styles/layout.module.css';
+import Footer from './footer';
+import Navbar from './navbar';
+import Banner from './banner';
 
-const name = 'Michael Westerby'
-export const siteTitle = name
+const name = 'Michael Westerby';
+export const siteTitle = name;
 
-export default function Layout({ children, home='' }: {children: React.ReactNode, home?: string}) {
+export default function Layout({ children, home = '' }: { children: React.ReactNode, home?: string }) {
   return (
     <>
-      <Navbar home={home}/>
+      <Navbar home={home} />
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -18,11 +18,15 @@ export default function Layout({ children, home='' }: {children: React.ReactNode
           <meta name="og:title" content={siteTitle} />
         </Head>
         <header className={styles.header}>
-          <Banner home={home} name={name}/>
+          <Banner home={home} name={name} />
         </header>
         <main>{children}</main>
         <Footer />
       </div>
     </>
-  )
+  );
 }
+
+Layout.defaultProps = {
+  home: '',
+};
