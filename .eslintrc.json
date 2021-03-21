@@ -11,6 +11,8 @@
       "airbnb-typescript"
     ],
     "rules": {
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "react/no-danger": "off",
+      "jsx-a11y/anchor-is-valid": "off"
     }
   }
