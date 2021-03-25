@@ -8,7 +8,6 @@ import { getProjects } from '../lib/projects';
 import Date from '../components/date';
 
 export type Project = {
-  // id: string,
   startDate: string,
   endDate: string,
   title: string,
@@ -20,7 +19,6 @@ export type Projects = Project[];
 
 function Project(project: Project) {
   const {
-    // id,
     startDate,
     endDate,
     title,
@@ -68,10 +66,8 @@ export default function Projects({ allProjectsData } : { allProjectsData: Projec
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  // console.log(getProjects());
   const allProjectsData = getProjects();
 
-  // const allProjectsData = await getSortedProjectsData();
   return {
     props: {
       allProjectsData,
