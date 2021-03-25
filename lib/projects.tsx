@@ -1,52 +1,18 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-await-in-loop */
-
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
-import remark from 'remark';
-import html from 'remark-html';
+import YAML from 'yaml';
+import type { Project, Projects } from '../pages/projects';
 
-const projectsDirectory = path.join(process.cwd(), 'content/projects');
+const projectsFile = path.join(process.cwd(), 'content/projects.yml');
 
-export async function getSortedProjectsData() {
-  // Get file names under /projects
-  const fileNames = fs.readdirSync(projectsDirectory);
+// eslint-disable-next-line import/prefer-default-export
+export function getProjects(): Projects {
+  const file = fs.readFileSync(projectsFile, 'utf8');
+  const result = YAML.parse(file);
 
-  const allProjectsData = [];
-
-  for (const fileName of fileNames) {
-    const id = fileName.replace(/\.md$/, '');
-
-    // Read markdown file as string
-    const fullPath = path.join(projectsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-    // Use gray-matter to parse the project metadata section
-    const matterResult = matter(fileContents);
-
-    // Use remark to convert markdown into HTML string
-    const processedContent = await remark()
-      .use(html)
-      .process(matterResult.content);
-    const contentHtml = processedContent.toString();
-
-    const {
-      title, startDate, endDate, link,
-    } = matterResult.data;
-
-    // Combine the data with the id
-    allProjectsData.push({
-      id,
-      contentHtml,
-      title,
-      startDate,
-      endDate,
-      link,
-    });
-  }
-
-  // Sort projects by date
-  return allProjectsData.sort((a, b) => (a.startDate < b.startDate ? 1 : -1));
+  // Sort projects by start date
+  result.content.sort(
+    (projectA: Project, projectB: Project) => (projectA.startDate < projectB.startDate ? 1 : -1),
+  );
+  return result.content;
 }

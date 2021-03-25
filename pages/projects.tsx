@@ -4,32 +4,30 @@ import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import { getSortedProjectsData } from '../lib/projects';
+import { getProjects } from '../lib/projects';
 import Date from '../components/date';
 
 export type Project = {
-  id: string,
   startDate: string,
   endDate: string,
   title: string,
-  contentHtml: string,
+  description: string,
   link: string
 };
 
-type Projects = Project[];
+export type Projects = Project[];
 
 function Project(project: Project) {
   const {
-    id,
     startDate,
     endDate,
     title,
-    contentHtml,
+    description,
     link,
   } = project;
 
   return (
-    <li className={utilStyles.listItem} key={id}>
+    <li className={utilStyles.listItem} key={title}>
       <div className={utilStyles.listItemHeading}><a className={utilStyles.colorInherit} href={link} target="_blank" rel="noreferrer">{title}</a></div>
       <small className={utilStyles.lightText}>
         <Date dateString={startDate} dateFormat="LLLL yyyy" />
@@ -38,7 +36,7 @@ function Project(project: Project) {
       </small>
       <small>
         <ul className={utilStyles.list}>
-          <li className={utilStyles.listItem} dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          <li className={utilStyles.listItem} dangerouslySetInnerHTML={{ __html: description }} />
         </ul>
         <a href={link} target="_blank" rel="noreferrer">Code</a>
       </small>
@@ -68,7 +66,8 @@ export default function Projects({ allProjectsData } : { allProjectsData: Projec
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allProjectsData = await getSortedProjectsData();
+  const allProjectsData = getProjects();
+
   return {
     props: {
       allProjectsData,
