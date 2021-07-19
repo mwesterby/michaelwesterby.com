@@ -1,21 +1,49 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable max-len */
 /* eslint-disable react/no-unescaped-entities */
-import Head from 'next/head';
-import Link from 'next/link';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
+import Head from 'next/head'
+import Link from 'next/link'
+import {
+  useColorMode,
+  Heading,
+  Text,
+  Flex,
+  Stack,
+  color
+} from '@chakra-ui/react'
 
-export default function Home() {
+import Container from '../components/Container'
+
+export default function Index() {
+  const colorMode = useColorMode().colorMode
+  const colorSecondary = {
+    light: 'gray.700',
+    dark: 'gray.400'
+  }
+
   return (
-    <Layout home="home">
+    <Container>
       <Head>
-        <title>{siteTitle}</title>
+        <title>Home - Michael Westerby</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Hi, I'm Michael! a Software Engineer working at IBM, currently developing and testing the CICS Transaction Server for z/OS.</p>
-        <p>I previously worked on API Connect in IBM for two years after graduating with a master's degree in Computer Science from Newcastle University. You can read more about me <Link href="/cv">here</Link>.</p>
-      </section>
-    </Layout>
-  );
+      <Stack
+        as='main'
+        spacing={8}
+        justifyContent='center'
+        alignItems='flex-start'
+        m='0 auto 4rem auto'
+        maxWidth='700px'
+        px={2}
+      >
+        <Flex
+          flexDirection='column'
+          justifyContent='flex-start'
+          alignItems='flex-start'
+          maxWidth='700px'
+        >
+          <Heading mb={2}>Hi, I'm Michael Westerby</Heading>
+          <Text color={colorSecondary[colorMode]}>I'm a Software Engineer working at IBM, currently developing and testing the CICS Transaction Server for z/OS.</Text>
+          <Text color={colorSecondary[colorMode]}>I previously worked on API Connect in IBM for two years after graduating with a master's degree in Computer Science from Newcastle University. You can read more about me <Link href="/cv">here</Link>.</Text>
+        </Flex>
+      </Stack>
+    </Container>
+  )
 }

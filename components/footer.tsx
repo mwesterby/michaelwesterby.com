@@ -1,19 +1,56 @@
-import styles from '../styles/footer.module.css';
+import React from 'react'
+import { Flex, Link, IconButton, useColorMode } from '@chakra-ui/react'
+import { FiGithub, FiLinkedin, FiBookOpen, FiMail } from "react-icons/fi"
 
-export default function Footer() {
-  const github = 'mwesterby';
-  const linkedin = 'michael-westerby';
-  const medium = '@michael.westerby';
+export const Footer = () => {
 
-  const spacer = ' • ';
-
-  return (
-    <footer className={styles.footer}>
-      <a href={`https://github.com/${github}`} target="_blank" rel="noreferrer">GitHub</a>
-      {spacer}
-      <a href={`https://www.linkedin.com/in/${linkedin}`} target="_blank" rel="noreferrer">LinkedIn</a>
-      {spacer}
-      <a href={`https://medium.com/${medium}`} target="_blank" rel="noreferrer">Medium</a>
-    </footer>
-  );
+    const { colorMode } = useColorMode()
+    const borderIcon = {
+        light: 'gray.400',
+        dark: 'gray.500'
+    }
+    const footerHoverBg = {
+        light: 'gray.100',
+        dark: 'gray.700',
+    }
+    return (
+        <Flex align="center" mb={4} direction="column" visibility={'hidden', 'visible', 'visible'} display={['none', 'flex', 'flex']}>
+            <div>
+                <Link href="https://github.com/mwesterby" title="GitHub" isExternal>
+                    <IconButton
+                        aria-label="GitHub"
+                        icon={<FiGithub />}
+                        size="lg"
+                        color={borderIcon[colorMode]}
+                        variant="ghost"
+                        _hover={{ backgroundColor: footerHoverBg[colorMode] }}
+                    />
+                </Link>
+                <Link
+                    href="https://www.linkedin.com/in/michael-westerby/"
+                    title="LinkedIn"
+                    isExternal
+                >
+                    <IconButton
+                        aria-label="LinkedIn"
+                        icon={<FiLinkedin />}
+                        size="lg"
+                        color={borderIcon[colorMode]}
+                        variant="ghost"
+                        _hover={{ backgroundColor: footerHoverBg[colorMode] }}
+                    />
+                </Link>
+                <Link href="https://medium.com/@michael.westerby" title="Medium" isExternal>
+                    <IconButton
+                        aria-label="Medium"
+                        icon={<FiBookOpen />}
+                        size="lg"
+                        color={borderIcon[colorMode]}
+                        variant="ghost"
+                        _hover={{ backgroundColor: footerHoverBg[colorMode] }}
+                    />
+                </Link>
+            </div>
+        </Flex>
+    )
 }

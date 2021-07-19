@@ -1,54 +1,171 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable max-len */
+import Head from 'next/head'
+import {
+    useColorMode,
+    Heading,
+    Text,
+    Flex,
+    Stack
+} from '@chakra-ui/react'
 
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import cvStyles from '../styles/cv.module.css';
+import Container from '../components/Container'
+import EducationCard from '../components/EducationCard'
 
 export default function CV() {
-  return (
-    <Layout>
-      <Head>
-        <title>
-          {siteTitle}
-          {' | CV'}
-        </title>
-      </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h1 className={utilStyles.headingXL}>CV</h1>
 
-        <h1 className={cvStyles.heading}>Experience</h1>
-        <h2 className={cvStyles.subheadingXL}>IBM</h2>
-        <h3 className={cvStyles.subheading}>Software Engineer - CICS</h3>
-        <p className={cvStyles.date}>September 2020 - Present</p>
-        <p className={cvStyles.body}>Software developer and tester for the <a href="https://www.ibm.com/uk-en/products/cics-transaction-server">CICS Transaction Server </a>on z/OS.</p>
-        <p className={cvStyles.language}>Java</p> <p className={cvStyles.language}>Python</p>
+    const { colorMode } = useColorMode()
+    const textColor = {
+        light: 'gray.700',
+        dark: 'gray.400'
+    }
 
-        <h3 className={cvStyles.subheading}>Software Engineer - API Connect</h3>
-        <p className={cvStyles.date}>September 2018 - September 2020</p>
-        <p className={cvStyles.body}>Full stack developer in IBM Cloud, responsible for the software development behind IBM's API lifecycle management program, <a href="https://www.ibm.com/uk-en/cloud/api-connect">API Connect</a>.</p>
-        <p className={cvStyles.language}>JavaScript</p> <p className={cvStyles.language}>Golang</p> <p className={cvStyles.language}>Apache Groovy</p>
+    const borderColor = {
+        light: 'gray.200',
+        dark: 'gray.600'
+    }
 
-        <h1 className={cvStyles.heading}>Education</h1>
-        <h2 className={cvStyles.subheadingXL}>Newcastle University</h2>
-        <h3 className={cvStyles.subheading}>MSc Computer Science, Distinction</h3>
-        <p className={cvStyles.date}>September 2017 - August 2018</p>
-        <p className={cvStyles.body}>Masters Project: A Peer and Self-Assessment Tool for Software Engineering Teams</p>
-        <h2 className={cvStyles.subheadingXL}>Durham University</h2>
-        <h3 className={cvStyles.subheading}>BSc Geography, First Class Honors</h3>
-        <p className={cvStyles.date}>September 2014 - June 2017</p>
-        <p className={cvStyles.body}>Dissertation: An Investigation into the use of Structure-from-Motion Photogrammetry in Reconstructing Flood Extents from Smartphone Imagery.</p>
 
-        <h1 className={cvStyles.heading}>Technical Skills</h1>
-        <h3 className={cvStyles.subheadingXL}>Languages</h3>
-        <p className={cvStyles.body}>JavaScript, Golang, Java</p>
-        <h3 className={cvStyles.subheadingXL}>Frameworks / Tools</h3>
-        <p className={cvStyles.body}>React, Next.js, HTML/CSS</p>
-        <h3 className={cvStyles.subheadingXL}>Devops / SCM</h3>
-        <p className={cvStyles.body}>Docker, Kubernetes, Jenkins, Git, RTC</p>
-      </section>
-    </Layout>
-  );
+    return (
+        <Container>
+            <Head>
+                <title>CV - Michael Westerby</title>
+            </Head>
+            <Stack
+                    as="main"
+                    spacing={8}
+                    justifyContent="center"
+                    alignItems="flex-start"
+                    m="0 auto 4rem auto"
+                    maxWidth="700px"
+                >
+                <Flex
+                    flexDirection="column"
+                    justifyContent="flex-start"
+                    alignItems="flex-start"
+                    maxWidth="700px"
+                    w="100%"
+                >
+                    <Heading letterSpacing="tight" mb={2} ml={2} as="h1" size="2xl">
+                        CV
+                    </Heading>
+                    <Heading letterSpacing="tight" mt={8} ml={2} size="lg" fontWeight={700} as="h2">
+                        Experience
+                    </Heading>
+
+
+                    <Flex
+                        align="center"
+                        border="1px solid"
+                        borderColor={borderColor[colorMode]}
+                        borderRadius={4}
+                        p={4}
+                        m={2}
+                    >
+                        <Stack>
+                            <Heading
+                                as="h4"
+                                size="md"
+                                fontWeight="bold"
+                            >
+                                IBM
+                            </Heading>
+                            <Flex
+                                justifyContent="space-between"
+                                flexDirection={["column", "row", "row"]}
+                            >
+                                <Flex
+                                    flexDirection="column"
+                                >
+                                    <Text>Software Engineer - CICS</Text>
+                                </Flex>
+                                <Flex
+                                    flexDirection="column"
+                                >
+                                    <Text fontStyle="italic" color="gray.600" fontSize="14px">
+                                        September 2020 - Present
+                                    </Text>
+                                </Flex>
+                            </Flex>
+                            <Text color={textColor[colorMode]}>Software developer and tester for the CICS Transaction Server on z/OS.</Text>
+                            <Flex
+                                justifyContent="space-between"
+                                flexDirection={["column", "row", "row"]}
+                            >
+                                <Flex
+                                    flexDirection="column"
+                                >
+                                    <Text>Software Engineer - API Connect</Text>
+                                </Flex>
+                                <Flex
+                                    flexDirection="column"
+                                >
+                                    <Text fontStyle="italic" color="gray.600" fontSize="14px">
+                                        September 2018 - September 2020
+                                    </Text>
+                                </Flex>
+                            </Flex>
+                            <Text color={textColor[colorMode]}>Full stack developer in IBM Cloud, responsible for the software development behind IBM's API lifecycle management program, API Connect.</Text>
+                        </Stack>
+                    </Flex>
+                    <Heading letterSpacing="tight" mt={8} ml={2} size="lg" fontWeight={700} as="h2">
+                        Education
+                    </Heading>
+                    <EducationCard
+                        uni="Newcastle University"
+                        years="September 2017 - August 2018"
+                        degree="MSc Computer Science"
+                        badge='Distinction'
+                    >
+                        Masters Project: A Peer and Self-Assessment Tool for Software Engineering Teams. A tool which facilitates individuals in evaluating their own performance and skill development throughout a software engineering group project as well as appraising the skill development, contribution and performance of other team members.
+                    </EducationCard>
+                    <EducationCard
+                        uni="Durham University"
+                        years="September 2014 - June 2017"
+                        degree="BSc Geography"
+                        badge='First Class Honors'
+                    >
+                        Dissertation: An Investigation into the use of Structure-from-Motion Photogrammetry in Reconstructing Flood Extents from Smartphone Imagery.
+                    </EducationCard>
+                    <Heading letterSpacing="tight" mt={8} ml={2} size="lg" fontWeight={700} as="h2">
+                        Technical Skills
+                    </Heading>
+                    <Flex
+                        align="center"
+                        border="1px solid"
+                        borderColor={borderColor[colorMode]}
+                        borderRadius={4}
+                        p={4}
+                        m={2}
+                    >
+                        <Stack justifyContent='space-around'>
+                        <Heading as="h4" size="md" fontWeight="bold">
+                            Languages
+                        </Heading>
+                        <Text>JavaScript, Golang, Java</Text>
+
+                        <Heading as="h4" size="md" fontWeight="bold">
+                            Frameworks / Tools
+                        </Heading>
+                        <Text>React, Next.js, HTML/CSS</Text>
+
+                        <Heading as="h4" size="md" fontWeight="bold">
+                            Devops / SCM
+                        </Heading>
+                        <Text>Docker, Kubernetes, Jenkins, Git, RTC</Text>
+                    </Stack>
+
+
+                    </Flex>
+                    
+
+                </Flex>
+                
+
+            </Stack>
+
+        </Container>
+
+
+
+    )
 }
