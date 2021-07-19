@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex, Link, IconButton, useColorMode } from '@chakra-ui/react'
-import { FiGithub, FiLinkedin, FiBookOpen, FiMail } from "react-icons/fi"
+import { FiGithub, FiLinkedin, FiBookOpen } from "react-icons/fi"
 
 const Footer = () => {
 
