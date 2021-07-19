@@ -4,6 +4,7 @@ import {
     Heading,
     Text,
     Flex,
+    Image,
     Link,
     Stack,
     Badge
@@ -25,10 +26,7 @@ const EducationCard = ({ uni, years, degree, badge, children }: { uni: string, y
 
             <Flex
                 align="center"
-                border="1px solid"
-                borderColor={borderColor[colorMode]}
-                borderRadius={4}
-                p={4}
+                pt={4}
                 m={2}
             >
                 <Stack>
@@ -36,9 +34,7 @@ const EducationCard = ({ uni, years, degree, badge, children }: { uni: string, y
                         justifyContent="space-between"
                         flexDirection={["column", "row", "row"]}
                     >
-                        <Flex
-                            flexDirection="column"
-                        >
+                        <Flex flexDirection="column">
                             <Heading
                                 as="h4"
                                 size="md"
@@ -48,9 +44,7 @@ const EducationCard = ({ uni, years, degree, badge, children }: { uni: string, y
                             </Heading>
                             <Text>{degree}</Text>
                         </Flex>
-                        <Flex
-                            flexDirection="column"
-                        >
+                        <Flex flexDirection="column">
                             <Text fontStyle="italic" color="gray.600" fontSize="14px">
                                 {years}
                             </Text>

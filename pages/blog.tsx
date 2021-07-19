@@ -47,7 +47,7 @@ export default function Blog({posts}) {
                         px={4}
                     >
                         <Heading letterSpacing="tight" mb={4} as="h1" size="2xl">
-                            Blog ({posts.length} posts)
+                            Blog
                         </Heading>
                         <InputGroup mb={4} mr={4} w="100%">
                             <Input
@@ -59,6 +59,9 @@ export default function Blog({posts}) {
                                 <SearchIcon color="gray.300"/>
                             </InputRightElement>
                         </InputGroup>
+                        <Heading letterSpacing="tight" mb={4} as="h3" size="md">
+                            {filteredBlogPosts.length !=1 ? filteredBlogPosts.length + ' Posts' : filteredBlogPosts.length + ' Post'} 
+                        </Heading>
                         {!filteredBlogPosts.length && 'No posts found :('}
                         {filteredBlogPosts.map((frontMatter: JSX.IntrinsicAttributes & { title: string; publishedAt: string; summary: string; slug: string }) => <BlogPost key={frontMatter.title} {...frontMatter} />)}
                     </Flex>

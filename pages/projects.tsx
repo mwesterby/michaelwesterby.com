@@ -62,7 +62,6 @@ const Projects = () => {
                             badges={['TypeScript', 'Next.js']}
                             src="/images/mw-favicon.png"
                             alt='michaelwesterby.com Icon'
-                            // color={iconColor[colorMode]}
                         >
                             This website! Starting from the Next.js starter template. Deployed using Vercel.
                         </ ProjectCard>
@@ -72,9 +71,8 @@ const Projects = () => {
                             badges={['Swift']}
                             src="/images/swift-icon.png"
                             alt='Swift icon'
-                            // color={iconColor[colorMode]}
                         >
-                            My solutions to the excercises in Apple's free <Link href="https://books.apple.com/gb/book/app-development-with-swift/id1465002990" isExternal color="blue.500">App Development with Swift</Link> textbook.
+                            My solutions to the labs and excercises in Apple's free <Link href="https://books.apple.com/gb/book/app-development-with-swift/id1465002990" isExternal color="blue.500">App Development with Swift</Link> textbook.
                         </ ProjectCard>
                         <ProjectCard
                             title="Project Reunite"
@@ -82,7 +80,6 @@ const Projects = () => {
                             badges={['JavaScript']}
                             src="/images/project-reunite-logo.png"
                             alt='Personal website logo'
-                            // color={iconColor[colorMode]}
                         >
                             Entry to IBM's Call for Code hackathon which placed 1st in the UK competition, and 5th out of 132 teams in the global contest. This was a mobile app to help reunite lost loved ones following a natural disasters.
                         </ProjectCard>
@@ -92,7 +89,6 @@ const Projects = () => {
                             badges={['Java', 'Maven']}
                             src="/images/sudoku.png"
                             alt='Sudoku'
-                            // color={iconColor[colorMode]}
                         >
                             A quick Sudoku solver I created one afternoon, solving Sudoku's in the same way I do.
                         </ProjectCard>

@@ -8,10 +8,13 @@ import {
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import DarkModeSwitch from './DarkModeSwitch'
+import { useRouter } from 'next/router'
 
 const NavigationBar = () => {
 
     const { colorMode } = useColorMode();
+    const router = useRouter()
+    
     const bgColor = {
         light: 'white',
         dark: '#171717'
@@ -48,22 +51,22 @@ const NavigationBar = () => {
         >
             <Box>
                 <NextLink href="/" passHref>
-                    <Button as='a' variant='ghost' p={[1,2,4]} mr={1} _hover={{ backgroundColor: navHoverBg[colorMode]}}>
+                    <Button as='a' variant='ghost' p={[1,2,4]} mr={1} backgroundColor={router.pathname === '/' ? navHoverBg[colorMode] : null}>
                         Home
                     </Button>
                 </NextLink>
-                <NextLink href="/blog" passHref>
-                    <Button as='a' variant='ghost' p={[1,2,4]} mr={1} _hover={{ backgroundColor: navHoverBg[colorMode]}}>
-                        Blog
-                    </Button>
-                </NextLink>
                 <NextLink href="/projects" passHref>
-                    <Button as='a' variant='ghost' p={[1,2,4]} mr={1} _hover={{ backgroundColor: navHoverBg[colorMode]}}>
+                    <Button as='a' variant='ghost' p={[1,2,4]} mr={1} backgroundColor={router.pathname === '/projects' ? navHoverBg[colorMode] : null}>
                         Projects
                     </Button>
                 </NextLink>
+                <NextLink href="/blog" passHref>
+                    <Button as='a' variant='ghost' p={[1,2,4]} mr={1} backgroundColor={router.pathname === '/blog' ? navHoverBg[colorMode] : null}>
+                        Blog
+                    </Button>
+                </NextLink>
                 <NextLink href="/cv" passHref>
-                    <Button as='a' variant='ghost' p={[1,2,4]} _hover={{ backgroundColor: navHoverBg[colorMode]}}>
+                    <Button as='a' variant='ghost' p={[1,2,4]} backgroundColor={router.pathname === '/cv' ? navHoverBg[colorMode] : null}>
                         CV
                     </Button>
                 </NextLink>
