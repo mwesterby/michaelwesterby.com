@@ -2,7 +2,7 @@ import React from 'react'
 import { Flex, Link, IconButton, useColorMode } from '@chakra-ui/react'
 import { FiGithub, FiLinkedin, FiBookOpen, FiMail } from "react-icons/fi"
 
-export const Footer = () => {
+const Footer = () => {
 
     const { colorMode } = useColorMode()
     const borderIcon = {
@@ -54,3 +54,5 @@ export const Footer = () => {
         </Flex>
     )
 }
+
+export default Footer
