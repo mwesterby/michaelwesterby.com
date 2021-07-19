@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react'
 import NavigationBar from './NavigationBar'
 
-import { Footer } from './Footer'
+import Footer from './Footer'
 
 const Container = ({ children }: {children: React.ReactNode}) => {
 

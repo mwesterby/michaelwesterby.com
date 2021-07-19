@@ -14,7 +14,7 @@ const Footer = () => {
         dark: 'gray.700',
     }
     return (
-        <Flex align="center" mb={4} direction="column" visibility={'hidden', 'visible', 'visible'} display={['none', 'flex', 'flex']}>
+        <Flex align="center" mb={4} direction="column" visibility={['hidden', 'visible', 'visible']} display={['none', 'flex', 'flex']}>
             <div>
                 <Link href="https://github.com/mwesterby" title="GitHub" isExternal>
                     <IconButton
