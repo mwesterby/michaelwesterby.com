@@ -130,7 +130,7 @@ export default function CV() {
                         <Heading as="h4" size="md" fontWeight="bold">
                             Languages
                         </Heading>
-                        <Text>JavaScript, Golang, Java</Text>
+                        <Text>Java, Python, JavaScript, Go</Text>
 
                         <Heading as="h4" size="md" fontWeight="bold">
                             Frameworks / Tools
@@ -140,7 +140,7 @@ export default function CV() {
                         <Heading as="h4" size="md" fontWeight="bold">
                             Devops / SCM
                         </Heading>
-                        <Text>Docker, Kubernetes, Jenkins, Git, RTC</Text>
+                        <Text>Docker, Kubernetes, Jenkins, Git, GitHub, RTC</Text>
                     </Stack>
 
 

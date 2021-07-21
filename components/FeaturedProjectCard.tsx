@@ -13,8 +13,8 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 
 
-const ProjectCard = ({ title, children, href}: 
-    { title: string, children: React.ReactNode, href: string }) => {
+const FeaturedProjectCard = ({ title, href, badges, children, src, alt }: 
+    { title: string, href: string, badges:Array<string>, children: React.ReactNode, src: string, alt: string }) => {
     const { colorMode } = useColorMode()
     const borderColor = {
         light: 'gray.200',
@@ -52,23 +52,34 @@ const ProjectCard = ({ title, children, href}:
                 borderRadius={4}
                 p={4}
             >
+                <Image
+                    src={src}
+                    alt={alt}
+                    width={["40px", "50px", "60px"]}
+                    ml={2}
+                    mr={4}
+                ></Image>
                 <Stack>
                     <Flex justify="space-between">
                         <Heading
                             as="h4"
                             size="md"
                             fontWeight="bold"
+                            mb={2}
                         >
                             {title}
                         </Heading>
                         <ExternalLinkIcon color={colorSecondary[colorMode]} opacity={opacity} fontSize="2xl" />
                     </Flex>
                     <Text color={colorSecondary[colorMode]}>{children}</Text>
-                    
+                    <Flex>
+                        {!badges.length && 'No posts found :('}
+                        {badges.map((text) => <Badge key={text} m={1}>{text}</Badge>)}
+                    </Flex>
                 </Stack>
             </Flex>
         </Link>
     )
 }
 
-export default ProjectCard
+export default FeaturedProjectCard
