@@ -1,6 +1,8 @@
 <h1 align="center">michaelwesterby.com 👨‍💻</h1>
 
-My personal website, built on top of the Next.js [starter template](https://nextjs.org/learn). The `master` branch is deployed to https://michaelwesterby.com.
+![Production Deployment Status](https://img.shields.io/github/deployments/mwesterby/michaelwesterby.com/production?label=vercel&logo=vercel&logoColor=white)
+
+My personal website, built on top of the Chakra UI and Next.js [Quickstart Tutorial](https://www.youtube.com/watch?v=lhOvI9s5gQY) by Benjamin Carlson. The `master` branch is deployed to https://michaelwesterby.com.
 
 ## Setup
 1. Clone the repo:
