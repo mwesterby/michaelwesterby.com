@@ -137,17 +137,17 @@ export default function CV() {
                         <Heading as="h4" size="md" fontWeight="bold">
                             Languages
                         </Heading>
-                        <Text>Java, Python, JavaScript, Go, Bash</Text>
+                        <Text color={textColor[colorMode]}>Java, Python, JavaScript, Go, Bash</Text>
 
                         <Heading as="h4" size="md" fontWeight="bold">
                             Frameworks / Tools
                         </Heading>
-                        <Text>React, Next.js, HTML/CSS</Text>
+                        <Text color={textColor[colorMode]}>React, Next.js, HTML/CSS</Text>
 
                         <Heading as="h4" size="md" fontWeight="bold">
                             Devops / SCM
                         </Heading>
-                        <Text>Docker, Kubernetes, Jenkins, Git, GitHub, RTC</Text>
+                        <Text color={textColor[colorMode]}>Docker, Kubernetes, Jenkins, Git, GitHub, RTC</Text>
                     </Stack>
 
 
