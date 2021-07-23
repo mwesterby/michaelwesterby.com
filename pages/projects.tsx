@@ -53,7 +53,7 @@ const Projects = () => {
                             Projects
                         </Heading>
                         <Text color={colorSecondary[colorMode]}>
-                            Here is a list of projects I've completed over the years, either in my spare time, as part of my job, or from a course I've completed. Clicking on any will take you to their GitHub repo.
+                            Here is a list of projects I've completed over the years, either in my spare time, as part of my job, university, or from a course I've completed. Clicking on any will take you to their GitHub repo.
                         </Text>
                         <Heading letterSpacing="tight" as="h1" mt={4} size="xl" fontWeight={700}>
                             Featured Projects
@@ -95,25 +95,43 @@ const Projects = () => {
                             A Sudoku solver I created to solve Sudoku's in the same way I do. By no means is this the most optimal! Just thought it would be a fun problem to solve with an Object Oriented approach.
                         </FeaturedProjectCard>
                         <Heading letterSpacing="tight" as="h2" mb={2} mt={4} size="xl" fontWeight={700}>
-                            All Projects
+                            Other Projects
                         </Heading>
                         <ProjectCard
-                            title="Advent of Code 2020"
+                            title="🎄 Advent of Code 2020"
                             href='https://github.com/mwesterby/advent-of-code-2020'
                         >
                             My solutions to the first 12 days of the 2020 Christmas themed <Link href='https://adventofcode.com/' isExternal color='blue.500'>Advent of Code</Link> challenges, written in JavaScript.
                         </ProjectCard>
                         <ProjectCard
-                            title="Node Rest Shop"
+                            title="🛍 Node Rest Shop"
                             href='https://github.com/mwesterby/node-rest-shop'
                         >
                             A Node.js tutorial project I used to build a simple RESTful API for a fictional shop, using express and mongoose.
                         </ProjectCard>
                         <ProjectCard
-                            title="Learn Go with Tests"
+                            title="✅ Learn Go with Tests"
                             href='https://github.com/mwesterby/learn-go-with-tests'
                         >
                             My notes and work from a <Link href='https://quii.gitbook.io/learn-go-with-tests/' isExternal color='blue.500'>Golang tutorial</Link> which teaches the fundamentals of Go using a test-driven development approach.
+                        </ProjectCard>
+                        <ProjectCard
+                            title="⚽️ Football Teams Server"
+                            href='https://github.com/mwesterby/football-teams-server'
+                        >
+                            Node.js server allowing you to store football club data and perform CRUD operations on the exposed API.
+                        </ProjectCard>
+                        <ProjectCard
+                            title="⚽️ Football Teams Client"
+                            href='https://github.com/mwesterby/football-teams-client'
+                        >
+                            A React client for displaying football clubs and their status in the league, obtaining data from the <Link href='https://github.com/mwesterby/football-teams-server' isExternal color='blue.500'>Football Teams Server</Link>.
+                        </ProjectCard>
+                        <ProjectCard
+                            title="🏔 Misty Mountains"
+                            href='https://github.com/mwesterby/misty-mountains'
+                        >
+                            A University CLI Java project to allow mountain climbers to collect and compare mountains they have ascended.
                         </ProjectCard>
                     </Flex>
                 </Stack>
