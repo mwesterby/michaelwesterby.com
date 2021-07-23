@@ -98,7 +98,7 @@ export default function CV() {
                                 </Flex>
                             </Flex>
                             <Text color={textColor[colorMode]}>
-                                Full stack developer in IBM Cloud, responsible for the software development behind IBM's API lifecycle management program, API Connect. Here I designed, implemented and tested new features for the main product’s microservices, working mainly with Docker and Kubernetes, Go, JavaScript and Apache Groovy.
+                                Full stack developer in IBM Cloud, responsible for the software development behind IBM's API lifecycle management program, API Connect. Here I designed, implemented, and tested new features for the main product’s microservices, working mainly with Docker and Kubernetes, Go, JavaScript and Apache Groovy.
                             </Text>
                         </Stack>
                     </Flex>
@@ -113,7 +113,7 @@ export default function CV() {
                         badge='Distinction'
                     >
                         <Text>Masters Project:</Text>
-                        A Peer and Self-Assessment Tool for Software Engineering Teams. This was a PHP web based tool I created which allowed members of a software engineering group project to not only reflect on thier own personal contribution and skill development throughout the project, but also that of thier peers. This was then used to calculate weighted marks for each member in the group based on these results.
+                        A Peer and Self-Assessment Tool for Software Engineering Teams. This was a PHP web-based tool I created which allowed members of a software engineering group project to not only reflect on their own personal contribution and skill development throughout the project, but also that of their peers. This was then used to calculate weighted marks for each member in the group based on these results.
                     </EducationCard>
                     <EducationCard
                         uni="Durham University"

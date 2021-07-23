@@ -74,7 +74,7 @@ const Projects = () => {
                             src="/images/swift-icon.png"
                             alt='Swift icon'
                         >
-                            My solutions to the labs and excercises in Apple's free <Link href="https://books.apple.com/gb/book/app-development-with-swift/id1465002990" isExternal color="blue.500">App Development with Swift</Link> textbook.
+                            My solutions to the labs and exercises in Apple's free <Link href="https://books.apple.com/gb/book/app-development-with-swift/id1465002990" isExternal color="blue.500">App Development with Swift</Link> textbook.
                         </ FeaturedProjectCard>
                         <FeaturedProjectCard
                             title="Project Reunite"
@@ -113,7 +113,7 @@ const Projects = () => {
                             title="Learn Go with Tests"
                             href='https://github.com/mwesterby/learn-go-with-tests'
                         >
-                            My notes and work from a <Link href='https://quii.gitbook.io/learn-go-with-tests/' isExternal color='blue.500'>Golang tutorial</Link> which teaches the fundamentals of Go using a test driven development approach.
+                            My notes and work from a <Link href='https://quii.gitbook.io/learn-go-with-tests/' isExternal color='blue.500'>Golang tutorial</Link> which teaches the fundamentals of Go using a test-driven development approach.
                         </ProjectCard>
                     </Flex>
                 </Stack>
