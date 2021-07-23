@@ -128,6 +128,12 @@ const Projects = () => {
                             A React client for displaying football clubs and their status in the league, obtaining data from the <Link href='https://github.com/mwesterby/football-teams-server' isExternal color='blue.500'>Football Teams Server</Link>.
                         </ProjectCard>
                         <ProjectCard
+                            title="🐍 Complete Python Bootcamp"
+                            href='https://github.com/mwesterby/complete-python-bootcamp'
+                        >
+                           My notes and assessments from the 2021 <Link href='https://www.udemy.com/course/complete-python-bootcamp/' isExternal color='blue.500'>Complete Python Bootcamp From Zero to Hero in Python</Link> course on Udemy.
+                        </ProjectCard>
+                        <ProjectCard
                             title="🏔 Misty Mountains"
                             href='https://github.com/mwesterby/misty-mountains'
                         >

@@ -6,6 +6,7 @@ import {
     Text,
     Flex,
     Stack,
+    Link,
     Divider
 } from '@chakra-ui/react'
 
@@ -81,7 +82,7 @@ export default function CV() {
                                 </Flex>
                             </Flex>
                             <Text color={textColor[colorMode]}>
-                                Software Engineer in the CICS Modern Languages team, developing and testing support for Java and Node.js on the CICS Transaction Server for z/OS. 
+                                Software Engineer in the CICS Modern Languages team, developing and testing support for Java and Node.js on the <Link href='https://www.ibm.com/uk-en/products/cics-transaction-server' isExternal color='blue.500'>CICS Transaction Server for z/OS</Link>. 
                             </Text>
                             <Flex
                                 justifyContent="space-between"
@@ -98,7 +99,7 @@ export default function CV() {
                                 </Flex>
                             </Flex>
                             <Text color={textColor[colorMode]}>
-                                Full stack developer in IBM Cloud, responsible for the software development behind IBM's API lifecycle management program, API Connect. Here I designed, implemented, and tested new features for the main product’s microservices, working mainly with Docker and Kubernetes, Go, JavaScript and Apache Groovy.
+                                Full stack developer in IBM Cloud, responsible for the software development behind IBM's API lifecycle management program, <Link href='https://www.ibm.com/uk-en/cloud/api-connect' isExternal color='blue.500'>API Connect</Link>. Here I designed, implemented, and tested new features for the main product’s microservices, working mainly with Docker and Kubernetes, Go, JavaScript and Apache Groovy.
                             </Text>
                         </Stack>
                     </Flex>
@@ -113,7 +114,7 @@ export default function CV() {
                         badge='Distinction'
                     >
                         <Text>Masters Project:</Text>
-                        A Peer and Self-Assessment Tool for Software Engineering Teams. This was a PHP web-based tool I created which allowed members of a software engineering group project to not only reflect on their own personal contribution and skill development throughout the project, but also that of their peers. This was then used to calculate weighted marks for each member in the group based on these results.
+                        A Peer and Self-Assessment Tool for Software Engineering Teams. This was a PHP web-based tool I created which allowed members of a software engineering group project to not only reflect on their own personal contribution and skill development throughout the project, but also that of their peers. This was then used to calculate weighted marks for each member in the group.
                     </EducationCard>
                     <EducationCard
                         uni="Durham University"
