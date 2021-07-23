@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
-import Link from 'next/link'
 import {
   useColorMode,
   Heading,
@@ -8,6 +7,7 @@ import {
   Flex,
   Stack,
   Image,
+  Link,
   color
 } from '@chakra-ui/react'
 
@@ -49,8 +49,8 @@ export default function Index() {
         >
           <Heading mb={2} alignSelf="center">Hi, I'm Michael Westerby</Heading>
           <Text color={colorSecondary[colorMode]}>I'm a Software Engineer working at IBM, currently developing and testing the CICS Transaction Server for z/OS.</Text>
-          
-          <Text color={colorSecondary[colorMode]} mt={1}>I previously worked on API Connect in IBM for two years after graduating with a master's degree in Computer Science from Newcastle University. You can read more about me <Link href="/cv">here</Link>.</Text>
+
+          <Text color={colorSecondary[colorMode]} mt={1}>I previously worked on API Connect in IBM for two years after graduating with a master's degree in Computer Science from Newcastle University. You can read more about me <Link href="/cv" color="blue.500">here</Link>.</Text>
         </Flex>
       </Stack>
     </Container>

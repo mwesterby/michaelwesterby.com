@@ -52,7 +52,8 @@ const Projects = () => {
                         <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
                             Projects
                         </Heading>
-                        <Text color={colorSecondary[colorMode]}>Here is somewhere I will need to write a summary of what I want to talk about with regards to the projects i've accomplished
+                        <Text color={colorSecondary[colorMode]}>
+                            Here is a list of projects I've completed over the years, either in my spare time, as part of my job, or from a course I've completed. Clicking on any will take you to their GitHub repo.
                         </Text>
                         <Heading letterSpacing="tight" as="h1" mt={4} size="xl" fontWeight={700}>
                             Featured Projects

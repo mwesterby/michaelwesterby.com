@@ -7,9 +7,12 @@ import {
     Text,
     Flex,
     Stack,
+    Button,
     Avatar
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import NextLink from 'next/link'
+import { FiChevronLeft } from "react-icons/fi";
 
 import Container from '../components/Container'
 
@@ -74,6 +77,12 @@ export default function BlogLayout({ children, frontMatter }) {
                     </Flex>
                 </Flex>
                 {children}
+
+                <NextLink href='/blog' passHref>
+                    <Button leftIcon={<FiChevronLeft />}>
+                        Back to posts
+                    </Button>
+                </NextLink>
             </Stack>
         </Container>
     )

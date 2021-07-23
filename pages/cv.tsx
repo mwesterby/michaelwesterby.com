@@ -80,10 +80,13 @@ export default function CV() {
                                     </Text>
                                 </Flex>
                             </Flex>
-                            <Text color={textColor[colorMode]}>Software developer and tester for the CICS Transaction Server on z/OS.</Text>
+                            <Text color={textColor[colorMode]}>
+                                Software Engineer in the CICS Modern Languages team, developing and testing support for Java and Node.js on the CICS Transaction Server for z/OS. 
+                            </Text>
                             <Flex
                                 justifyContent="space-between"
                                 flexDirection={["column", "row", "row"]}
+                                pt={5}
                             >
                                 <Flex flexDirection="column">
                                     <Text>Software Engineer - API Connect</Text>
@@ -94,7 +97,9 @@ export default function CV() {
                                     </Text>
                                 </Flex>
                             </Flex>
-                            <Text color={textColor[colorMode]}>Full stack developer in IBM Cloud, responsible for the software development behind IBM's API lifecycle management program, API Connect.</Text>
+                            <Text color={textColor[colorMode]}>
+                                Full stack developer in IBM Cloud, responsible for the software development behind IBM's API lifecycle management program, API Connect. Here I designed, implemented and tested new features for the main product’s microservices, working mainly with Docker and Kubernetes, Go, JavaScript and Apache Groovy.
+                            </Text>
                         </Stack>
                     </Flex>
                     <Divider mt={6}/>
@@ -107,7 +112,8 @@ export default function CV() {
                         degree="MSc Computer Science"
                         badge='Distinction'
                     >
-                        Masters Project: A Peer and Self-Assessment Tool for Software Engineering Teams. A tool which facilitates individuals in evaluating their own performance and skill development throughout a software engineering group project as well as appraising the skill development, contribution and performance of other team members.
+                        <Text>Masters Project:</Text>
+                        A Peer and Self-Assessment Tool for Software Engineering Teams. This was a PHP web based tool I created which allowed members of a software engineering group project to not only reflect on thier own personal contribution and skill development throughout the project, but also that of thier peers. This was then used to calculate weighted marks for each member in the group based on these results.
                     </EducationCard>
                     <EducationCard
                         uni="Durham University"
@@ -115,7 +121,8 @@ export default function CV() {
                         degree="BSc Geography"
                         badge='First Class Honors'
                     >
-                        Dissertation: An Investigation into the use of Structure-from-Motion Photogrammetry in Reconstructing Flood Extents from Smartphone Imagery.
+                        <Text>Dissertation:</Text>
+                        An Investigation into the use of Structure-from-Motion Photogrammetry in Reconstructing Flood Extents from Smartphone Imagery.
                     </EducationCard>
                     <Divider mt={6}/>
                     <Heading letterSpacing="tight" mt={8} ml={2} size="lg" fontWeight={700} as="h2">
@@ -130,7 +137,7 @@ export default function CV() {
                         <Heading as="h4" size="md" fontWeight="bold">
                             Languages
                         </Heading>
-                        <Text>Java, Python, JavaScript, Go</Text>
+                        <Text>Java, Python, JavaScript, Go, Bash</Text>
 
                         <Heading as="h4" size="md" fontWeight="bold">
                             Frameworks / Tools

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex, Link, IconButton, useColorMode } from '@chakra-ui/react'
-import { FiGithub, FiLinkedin, FiBookOpen } from "react-icons/fi"
+import { FiGithub, FiLinkedin, FiBook } from "react-icons/fi"
 
 const Footer = () => {
 
@@ -43,7 +43,7 @@ const Footer = () => {
                 <Link href="https://medium.com/@michael.westerby" title="Medium" isExternal>
                     <IconButton
                         aria-label="Medium"
-                        icon={<FiBookOpen />}
+                        icon={<FiBook />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
