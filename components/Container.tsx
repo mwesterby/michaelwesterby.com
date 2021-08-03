@@ -6,7 +6,7 @@ import {
 import NavigationBar from './NavigationBar'
 import Footer from './Footer'
 
-const Container = ({ children }: {children: React.ReactNode}) => {
+const Container = ({ children }: {children: React.ReactNode}): JSX.Element => {
 
     const { colorMode } = useColorMode();
     const bgColor = {

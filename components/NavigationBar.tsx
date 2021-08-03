@@ -10,7 +10,7 @@ import styled from '@emotion/styled'
 import DarkModeSwitch from './DarkModeSwitch'
 import { useRouter } from 'next/router'
 
-const NavigationBar = () => {
+const NavigationBar = (): JSX.Element => {
 
     const { colorMode } = useColorMode();
     const router = useRouter()

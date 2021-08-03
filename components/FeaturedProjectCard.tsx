@@ -14,7 +14,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 
 const FeaturedProjectCard = ({ title, href, badges, children, src, alt }: 
-    { title: string, href: string, badges:Array<string>, children: React.ReactNode, src: string, alt: string }) => {
+    { title: string, href: string, badges:Array<string>, children: React.ReactNode, src: string, alt: string }): JSX.Element => {
     const { colorMode } = useColorMode()
     const borderColor = {
         light: 'gray.200',

@@ -6,15 +6,13 @@ import {
     Text,
     Stack,
     useColorMode,
-    Image,
-    Badge
 } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 
 
 const ProjectCard = ({ title, children, href}: 
-    { title: string, children: React.ReactNode, href: string }) => {
+    { title: string, children: React.ReactNode, href: string }): JSX.Element => {
     const { colorMode } = useColorMode()
     const borderColor = {
         light: 'gray.200',

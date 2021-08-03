@@ -1,10 +1,10 @@
 
 import React from 'react'
 import NextLink from 'next/link'
-import { useColorMode, Heading, Text, Flex, Box, Link, Divider } from '@chakra-ui/react'
+import { useColorMode, Heading, Text, Flex, Box, Link } from '@chakra-ui/react'
 import { parseISO, format } from 'date-fns'
 
-const BlogPost = ({title, publishedAt, summary, slug}: {title: string, publishedAt: string, summary: string, slug: string}) => {
+const BlogPost = ({title, publishedAt, summary, slug}: {title: string, publishedAt: string, summary: string, slug: string}): JSX.Element => {
     const {colorMode} = useColorMode()
     const secondaryTextColor = {
         light: 'gray.700',

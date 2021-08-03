@@ -15,7 +15,7 @@ import BlogPost from '../components/BlogPost'
 
 import { SearchIcon } from '@chakra-ui/icons'
 
-export default function Blog({posts}) {
+export default function Blog({posts}): JSX.Element {
     const [searchValue, setSearchValue] = useState('')
 
     const filteredBlogPosts = posts
