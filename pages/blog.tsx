@@ -15,7 +15,10 @@ import BlogPost from '../components/BlogPost'
 
 import { SearchIcon } from '@chakra-ui/icons'
 
-export default function Blog({posts}): JSX.Element {
+import IBlogPost from '../interfaces/IBlogPost'
+import { GetStaticProps } from 'next'
+
+export default function Blog({posts}: {posts: IBlogPost[]}): JSX.Element {
     const [searchValue, setSearchValue] = useState('')
 
     const filteredBlogPosts = posts
@@ -72,7 +75,7 @@ export default function Blog({posts}): JSX.Element {
     )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
     const posts = await getAllFilesFrontMatter('blog')
     return { props: { posts }}
 }

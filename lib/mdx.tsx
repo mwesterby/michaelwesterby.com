@@ -6,15 +6,23 @@ import readingTime from 'reading-time'
 import renderToString from 'next-mdx-remote/render-to-string'
 
 import MDXComponents from '../components/MDXComponents'
+import IBlogPost from '../interfaces/IBlogPost'
+import { MdxRemote } from 'next-mdx-remote/types'
+import IBlogPostPage from '../interfaces/IBlogPostPage'
 
 const root = process.cwd()
 
-export async function getFiles(type) {
+export const getFiles = async (type: string): Promise<string[]> => { 
     return fs.readdirSync(path.join(root, 'data', type))
 }
 
-export async function getFileBySlug(type, slug) {
-    const source = slug ? 
+interface IFile {
+    mdxSource: MdxRemote.Source
+    frontMatter: IBlogPostPage
+}
+
+export const getFileBySlug = async (type: string, slug: string): Promise<IFile> => { 
+    const source = slug ?  
         fs.readFileSync(path.join(root, 'data', type, `${slug}.mdx`), 'utf8')
         : fs.readFileSync(path.join(root, 'data', type, `${type}.mdx`), 'utf8')
 
@@ -38,13 +46,15 @@ export async function getFileBySlug(type, slug) {
             wordCount: content.split(/\s+/gu).length,
             readingTime: readingTime(content),
             slug: slug || null,
-            ...data
+            title: data.title,
+            publishedAt: data.publishedAt,
+            summary: data.summary,
         }
     }
 
 }
 
-export async function getAllFilesFrontMatter(type) {
+export const getAllFilesFrontMatter = async (type: string): Promise<IBlogPost[]> => { 
     const files = fs.readdirSync(path.join(root, 'data', type))
 
     return files.reduce((allPosts, postSlug) => {
