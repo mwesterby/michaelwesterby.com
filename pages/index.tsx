@@ -8,12 +8,11 @@ import {
   Stack,
   Image,
   Link,
-  color
 } from '@chakra-ui/react'
 
 import Container from '../components/Container'
 
-export default function Index() {
+export default function Index(): JSX.Element {
   const colorMode = useColorMode().colorMode
   const colorSecondary = {
     light: 'gray.700',

@@ -8,24 +8,18 @@ import {
     Flex,
     Heading,
     useColorMode,
-    Code
 } from '@chakra-ui/react'
 
 import Container from '../components/Container'
 import ProjectCard from '../components/ProjectCard'
 import FeaturedProjectCard from '../components/FeaturedProjectCard'
 
-const Projects = () => {
+const Projects = (): JSX.Element => {
     const { colorMode } = useColorMode()
 
     const colorSecondary = {
         light: 'gray.700',
         dark: 'gray.400'
-    }
-
-    const iconColor = {
-        light: 'gray.600',
-        dark: 'gray.300'
     }
 
     return (

@@ -4,22 +4,16 @@ import {
     Heading,
     Text,
     Flex,
-    Image,
-    Link,
     Stack,
     Badge
 } from '@chakra-ui/react'
 
-const EducationCard = ({ uni, years, degree, badge, children }: { uni: string, years: string, degree: string, badge:string, children: React.ReactNode }) => {
+const EducationCard = ({ uni, years, degree, badge, children }: { uni: string, years: string, degree: string, badge:string, children: React.ReactNode }): JSX.Element => {
 
     const { colorMode } = useColorMode()
     const colorSecondary = {
         light: 'gray.700',
         dark: 'gray.400'
-    }
-    const borderColor = {
-        light: 'gray.200',
-        dark: 'gray.600'
     }
 
     return (

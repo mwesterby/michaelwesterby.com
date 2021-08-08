@@ -55,7 +55,12 @@ const DocsHeading = (props) => (
     </Heading>
 )
 
-const CustomLink = (props) => {
+type CustomLinkProps = {
+    href: string;
+    children?: React.ReactNode;
+  }
+
+const CustomLink = (props: CustomLinkProps): JSX.Element => {
     const { colorMode } = useColorMode()
     const color = {
         light: 'blue.500',
@@ -76,7 +81,8 @@ const CustomLink = (props) => {
     return <Link color={color[colorMode]} isExternal {...props} />
 }
 
-const Quote = (props) => {
+const Quote = (props: {children?: React.ReactNode}): JSX.Element => {
+    console.log(props)
     const { colorMode } = useColorMode()
     const bgColor = {
         light: 'blue.50',
@@ -101,7 +107,7 @@ const Quote = (props) => {
     )
 }
 
-const Hr = () => {
+const Hr = (): JSX.Element => {
     const { colorMode } = useColorMode()
     const borderColor = {
         light: 'gray.200',
@@ -111,23 +117,69 @@ const Hr = () => {
     return <Divider borderColor={borderColor[colorMode]} my={4} w="100%" />
 }
 
+const Heading1 = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <Heading as="h1" size="xl" my={4} {...props} />
+}
+
+const Heading2 = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <DocsHeading as="h2" size="lg" fontWeight="bold" {...props} />
+}
+
+const Heading3 = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <DocsHeading as="h3" size="md" fontWeight="bold" {...props} />
+}
+
+const Heading4 = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <DocsHeading as="h4" size="sm" fontWeight="bold" {...props} />
+}
+
+const Heading5 = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <DocsHeading as="h5" size="sm" fontWeight="bold" {...props} />
+}
+
+const Heading6 = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <DocsHeading as="h6" size="xs" fontWeight="bold" {...props} />
+}
+
+const InlineCode = (props: {children?: React.ReactNode}): JSX.Element => {
+    return (<Code colorScheme="gray" fontSize="0.84em" {...props} />)
+}
+
+const Br = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <Box height="24px" {...props} />
+}
+
+const Paragraph = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <Text as="p" mt={0} lineHeight="tall" {...props} />
+}
+
+const UnorderedList = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <Box as="ul" pt={2} pl={4} ml={2} {...props} />
+}
+
+const OrderedList = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <Box as="ol" pt={2} pl={4} ml={2} {...props} />
+}
+
+const ListItem = (props: {children?: React.ReactNode}): JSX.Element => {
+    return <Box as="li" pb={1} {...props} />
+}
+
 const MDXComponents = {
-    h1: (props) => <Heading as="h1" size="xl" my={4} {...props} />,
-    h2: (props) => <DocsHeading as="h2" size="lg" fontWeight="bold" {...props} />,
-    h3: (props) => <DocsHeading as="h3" size="md" fontWeight="bold" {...props} />,
-    h4: (props) => <DocsHeading as="h4" size="sm" fontWeight="bold" {...props} />,
-    h5: (props) => <DocsHeading as="h5" size="sm" fontWeight="bold" {...props} />,
-    h6: (props) => <DocsHeading as="h6" size="xs" fontWeight="bold" {...props} />,
-    inlineCode: (props) => (
-        <Code colorScheme="gray" fontSize="0.84em" {...props} />
-    ),
-    br: (props) => <Box height="24px" {...props} />,
+    h1: Heading1,
+    h2: Heading2,
+    h3: Heading3,
+    h4: Heading4,
+    h5: Heading5,
+    h6: Heading6,
+    inlineCode: InlineCode,
+    br: Br,
     hr: Hr,
     a: CustomLink,
-    p: (props) => <Text as="p" mt={0} lineHeight="tall" {...props} />,
-    ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
-    ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
-    li: (props) => <Box as="li" pb={1} {...props} />,
+    p: Paragraph,
+    ul: UnorderedList,
+    ol: OrderedList,
+    li: ListItem,
     blockquote: Quote,
 }
 

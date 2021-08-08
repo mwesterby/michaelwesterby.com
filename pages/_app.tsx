@@ -40,7 +40,7 @@ const GlobalStyle = ({ children }: {children: React.ReactNode}) => {
 
 
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
   <ChakraProvider resetCSS theme={customTheme}>
     <ColorModeProvider

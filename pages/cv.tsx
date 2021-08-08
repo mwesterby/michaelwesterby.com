@@ -13,20 +13,14 @@ import {
 import Container from '../components/Container'
 import EducationCard from '../components/EducationCard'
 
-export default function CV() {
+export default function CV(): JSX.Element {
 
     const { colorMode } = useColorMode()
     const textColor = {
         light: 'gray.700',
         dark: 'gray.400'
     }
-
-    const borderColor = {
-        light: 'gray.200',
-        dark: 'gray.600'
-    }
-
-
+    
     return (
         <Container>
             <Head>
