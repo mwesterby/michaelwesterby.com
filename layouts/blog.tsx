@@ -29,8 +29,6 @@ export default function BlogLayout({
 		dark: 'gray.400',
 	}
 
-	console.log(frontMatter)
-
 	return (
 		<Container>
 			<Head>
