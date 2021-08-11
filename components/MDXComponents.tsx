@@ -7,8 +7,17 @@ import {
 	Text,
 	Divider,
 	useColorMode,
+	Image,
+	Modal,
+	ModalBody,
+	ModalCloseButton,
+	ModalContent,
+	ModalHeader,
+	ModalOverlay,
+	useDisclosure,
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import React from 'react'
 
 const DocsHeading = (props) => (
 	<Heading
@@ -83,7 +92,6 @@ const CustomLink = (props: CustomLinkProps): JSX.Element => {
 }
 
 const Quote = (props: { children?: React.ReactNode }): JSX.Element => {
-	console.log(props)
 	const { colorMode } = useColorMode()
 	const bgColor = {
 		light: 'blue.50',
@@ -166,6 +174,45 @@ const ListItem = (props: { children?: React.ReactNode }): JSX.Element => {
 	return <Box as="li" pb={1} {...props} />
 }
 
+const ImageModal = (props: {
+	children?: React.ReactNode
+	alt: string
+	src: string
+	title?: string
+}): JSX.Element => {
+	const { isOpen, onOpen, onClose } = useDisclosure()
+	const { colorMode } = useColorMode()
+	const colorSecondary = {
+		light: 'gray.700',
+		dark: 'gray.400',
+	}
+	const borderIcon = {
+		light: 'gray.400',
+		dark: 'gray.500',
+	}
+
+	return (
+		<>
+			<Image onClick={onOpen} alt="" {...props} />
+
+			<Modal isOpen={isOpen} onClose={onClose} size="6xl">
+				<ModalOverlay />
+				<ModalContent>
+					<ModalHeader>
+						<Text color={colorSecondary[colorMode]}>
+							{props.alt}
+						</Text>
+					</ModalHeader>
+					<ModalCloseButton color={borderIcon[colorMode]} />
+					<ModalBody>
+						<Image alt={props.alt} src={props.src} />
+					</ModalBody>
+				</ModalContent>
+			</Modal>
+		</>
+	)
+}
+
 const MDXComponents = {
 	h1: Heading1,
 	h2: Heading2,
@@ -182,6 +229,7 @@ const MDXComponents = {
 	ol: OrderedList,
 	li: ListItem,
 	blockquote: Quote,
+	img: ImageModal,
 }
 
 export { CustomLink }

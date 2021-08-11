@@ -19,7 +19,7 @@ const NavigationBarItem = ({ path, name }): JSX.Element => {
 			<Button
 				as="a"
 				variant="ghost"
-				p={[1, 2, 4]}
+				p={[2, 2, 4]}
 				mr={1}
 				backgroundColor={
 					router.pathname === path ? navHoverBg[colorMode] : null
