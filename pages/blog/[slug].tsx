@@ -7,30 +7,35 @@ import { MdxRemote } from 'next-mdx-remote/types'
 
 import IBlogPostPage from '../../interfaces/IBlogPostPage'
 
-export default function Blog({mdxSource, frontMatter}: {mdxSource:  MdxRemote.Source, frontMatter: IBlogPostPage}): JSX.Element {
-    const content = hydrate(mdxSource, {
-        components: MDXComponents
-    })
+export default function Blog({
+	mdxSource,
+	frontMatter,
+}: {
+	mdxSource: MdxRemote.Source
+	frontMatter: IBlogPostPage
+}): JSX.Element {
+	const content = hydrate(mdxSource, {
+		components: MDXComponents,
+	})
 
-    return <BlogLayout frontMatter={frontMatter}>{content}</BlogLayout>
+	return <BlogLayout frontMatter={frontMatter}>{content}</BlogLayout>
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const posts = await getFiles('blog')
+	const posts = await getFiles('blog')
 
-    return {
-        paths: posts.map((p) => ({
-            params: {
-                slug: p.replace(/\.mdx/, '')
-            }
-        })),
-        fallback: false
-    }
+	return {
+		paths: posts.map((p) => ({
+			params: {
+				slug: p.replace(/\.mdx/, ''),
+			},
+		})),
+		fallback: false,
+	}
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const post = await getFileBySlug('blog', params.slug as string)
+	const post = await getFileBySlug('blog', params.slug as string)
 
-    return { props: post }
+	return { props: post }
 }
-
