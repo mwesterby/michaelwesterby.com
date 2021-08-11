@@ -7,7 +7,7 @@ import renderToString from 'next-mdx-remote/render-to-string'
 
 import MDXComponents from '../components/MDXComponents'
 import IBlogPost from '../interfaces/IBlogPost'
-import {MdxRemote} from 'next-mdx-remote/types'
+import { MdxRemote } from 'next-mdx-remote/types'
 import IBlogPostPage from '../interfaces/IBlogPostPage'
 
 const root = process.cwd()
@@ -29,7 +29,7 @@ export const getFileBySlug = async (
 		? fs.readFileSync(path.join(root, 'data', type, `${slug}.mdx`), 'utf8')
 		: fs.readFileSync(path.join(root, 'data', type, `${type}.mdx`), 'utf8')
 
-	const {data, content} = matter(source)
+	const { data, content } = matter(source)
 	const mdxSource = await renderToString(content, {
 		components: MDXComponents,
 		mdxOptions: {
@@ -65,7 +65,7 @@ export const getAllFilesFrontMatter = async (
 			path.join(root, 'data', type, postSlug),
 			'utf8'
 		)
-		const {data} = matter(source)
+		const { data } = matter(source)
 
 		return [
 			{

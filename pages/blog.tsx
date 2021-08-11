@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import {
 	Heading,
@@ -10,15 +10,15 @@ import {
 } from '@chakra-ui/react'
 
 import Container from '../components/Container'
-import {getAllFilesFrontMatter} from '../lib/mdx'
+import { getAllFilesFrontMatter } from '../lib/mdx'
 import BlogPost from '../components/BlogPost'
 
-import {SearchIcon} from '@chakra-ui/icons'
+import { SearchIcon } from '@chakra-ui/icons'
 
 import IBlogPost from '../interfaces/IBlogPost'
-import {GetStaticProps} from 'next'
+import { GetStaticProps } from 'next'
 
-export default function Blog({posts}: {posts: IBlogPost[]}): JSX.Element {
+export default function Blog({ posts }: { posts: IBlogPost[] }): JSX.Element {
 	const [searchValue, setSearchValue] = useState('')
 
 	const filteredBlogPosts = posts
@@ -100,5 +100,5 @@ export default function Blog({posts}: {posts: IBlogPost[]}): JSX.Element {
 
 export const getStaticProps: GetStaticProps = async () => {
 	const posts = await getAllFilesFrontMatter('blog')
-	return {props: {posts}}
+	return { props: { posts } }
 }

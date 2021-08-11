@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import {parseISO, format} from 'date-fns'
+import { parseISO, format } from 'date-fns'
 import {
 	useColorMode,
 	Heading,
@@ -11,7 +11,7 @@ import {
 	Avatar,
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
-import {FiChevronLeft} from 'react-icons/fi'
+import { FiChevronLeft } from 'react-icons/fi'
 
 import Container from '../components/Container'
 import IBlogPostPage from '../interfaces/IBlogPostPage'
@@ -23,7 +23,7 @@ export default function BlogLayout({
 	children: React.ReactNode
 	frontMatter: IBlogPostPage
 }): JSX.Element {
-	const {colorMode} = useColorMode()
+	const { colorMode } = useColorMode()
 	const textColor = {
 		light: 'gray.700',
 		dark: 'gray.400',

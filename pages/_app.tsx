@@ -1,11 +1,15 @@
-import type {AppProps} from 'next/app'
-import {ChakraProvider, ColorModeProvider, useColorMode} from '@chakra-ui/react'
+import type { AppProps } from 'next/app'
+import {
+	ChakraProvider,
+	ColorModeProvider,
+	useColorMode,
+} from '@chakra-ui/react'
 import customTheme from '../styles/theme'
-import {Global, css} from '@emotion/react'
-import {prismLightTheme, prismDarkTheme} from '../styles/prism'
+import { Global, css } from '@emotion/react'
+import { prismLightTheme, prismDarkTheme } from '../styles/prism'
 
-const GlobalStyle = ({children}: {children: React.ReactNode}) => {
-	const {colorMode} = useColorMode()
+const GlobalStyle = ({ children }: { children: React.ReactNode }) => {
+	const { colorMode } = useColorMode()
 
 	return (
 		<>
@@ -39,7 +43,7 @@ const GlobalStyle = ({children}: {children: React.ReactNode}) => {
 	)
 }
 
-function MyApp({Component, pageProps}: AppProps): JSX.Element {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	return (
 		<ChakraProvider resetCSS theme={customTheme}>
 			<ColorModeProvider

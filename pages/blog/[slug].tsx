@@ -1,9 +1,9 @@
 import hydrate from 'next-mdx-remote/hydrate'
-import {getFiles, getFileBySlug} from '../../lib/mdx'
-import {GetStaticPaths, GetStaticProps} from 'next'
+import { getFiles, getFileBySlug } from '../../lib/mdx'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import BlogLayout from '../../layouts/blog'
 import MDXComponents from '../../components/MDXComponents'
-import {MdxRemote} from 'next-mdx-remote/types'
+import { MdxRemote } from 'next-mdx-remote/types'
 
 import IBlogPostPage from '../../interfaces/IBlogPostPage'
 
@@ -34,8 +34,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	}
 }
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const post = await getFileBySlug('blog', params.slug as string)
 
-	return {props: post}
+	return { props: post }
 }

@@ -1,6 +1,13 @@
-import React, {useState} from 'react'
-import {Flex, Link, Heading, Text, Stack, useColorMode} from '@chakra-ui/react'
-import {ExternalLinkIcon} from '@chakra-ui/icons'
+import React, { useState } from 'react'
+import {
+	Flex,
+	Link,
+	Heading,
+	Text,
+	Stack,
+	useColorMode,
+} from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const ProjectCard = ({
 	title,
@@ -11,7 +18,7 @@ const ProjectCard = ({
 	children: React.ReactNode
 	href: string
 }): JSX.Element => {
-	const {colorMode} = useColorMode()
+	const { colorMode } = useColorMode()
 	const borderColor = {
 		light: 'gray.200',
 		dark: 'gray.600',

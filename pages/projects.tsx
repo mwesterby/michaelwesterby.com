@@ -1,14 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Head from 'next/head'
-import {Link, Text, Stack, Flex, Heading, useColorMode} from '@chakra-ui/react'
+import {
+	Link,
+	Text,
+	Stack,
+	Flex,
+	Heading,
+	useColorMode,
+} from '@chakra-ui/react'
 
 import Container from '../components/Container'
 import ProjectCard from '../components/ProjectCard'
 import FeaturedProjectCard from '../components/FeaturedProjectCard'
 
 const Projects = (): JSX.Element => {
-	const {colorMode} = useColorMode()
+	const { colorMode } = useColorMode()
 
 	const colorSecondary = {
 		light: 'gray.700',

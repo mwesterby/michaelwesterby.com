@@ -1,5 +1,12 @@
 import React from 'react'
-import {useColorMode, Heading, Text, Flex, Stack, Badge} from '@chakra-ui/react'
+import {
+	useColorMode,
+	Heading,
+	Text,
+	Flex,
+	Stack,
+	Badge,
+} from '@chakra-ui/react'
 
 const EducationCard = ({
 	uni,
@@ -14,7 +21,7 @@ const EducationCard = ({
 	badge: string
 	children: React.ReactNode
 }): JSX.Element => {
-	const {colorMode} = useColorMode()
+	const { colorMode } = useColorMode()
 	const colorSecondary = {
 		light: 'gray.700',
 		dark: 'gray.400',

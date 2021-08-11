@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import {
 	Flex,
 	Link,
@@ -9,7 +9,7 @@ import {
 	Image,
 	Badge,
 } from '@chakra-ui/react'
-import {ExternalLinkIcon} from '@chakra-ui/icons'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const FeaturedProjectCard = ({
 	title,
@@ -26,7 +26,7 @@ const FeaturedProjectCard = ({
 	src: string
 	alt: string
 }): JSX.Element => {
-	const {colorMode} = useColorMode()
+	const { colorMode } = useColorMode()
 	const borderColor = {
 		light: 'gray.200',
 		dark: 'gray.600',

@@ -1,7 +1,7 @@
 import React from 'react'
 import NextLink from 'next/link'
-import {useColorMode, Heading, Text, Flex, Box, Link} from '@chakra-ui/react'
-import {parseISO, format} from 'date-fns'
+import { useColorMode, Heading, Text, Flex, Box, Link } from '@chakra-ui/react'
+import { parseISO, format } from 'date-fns'
 
 const BlogPost = ({
 	title,
@@ -14,7 +14,7 @@ const BlogPost = ({
 	summary: string
 	slug: string
 }): JSX.Element => {
-	const {colorMode} = useColorMode()
+	const { colorMode } = useColorMode()
 	const secondaryTextColor = {
 		light: 'gray.700',
 		dark: 'gray.400',
@@ -28,7 +28,7 @@ const BlogPost = ({
 	return (
 		<>
 			<NextLink href={`blog/${slug}`} passHref>
-				<Link w="100%" _hover={{textDecoration: 'none'}}>
+				<Link w="100%" _hover={{ textDecoration: 'none' }}>
 					<Box
 						display="block"
 						width="100%"

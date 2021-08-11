@@ -14,7 +14,7 @@ import Container from '../components/Container'
 import EducationCard from '../components/EducationCard'
 
 export default function CV(): JSX.Element {
-	const {colorMode} = useColorMode()
+	const { colorMode } = useColorMode()
 	const textColor = {
 		light: 'gray.700',
 		dark: 'gray.400',

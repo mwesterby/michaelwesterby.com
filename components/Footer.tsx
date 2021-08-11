@@ -1,9 +1,9 @@
 import React from 'react'
-import {Flex, Link, IconButton, useColorMode} from '@chakra-ui/react'
-import {FiGithub, FiLinkedin, FiBook} from 'react-icons/fi'
+import { Flex, Link, IconButton, useColorMode } from '@chakra-ui/react'
+import { FiGithub, FiLinkedin, FiBook } from 'react-icons/fi'
 
 const Footer = (): JSX.Element => {
-	const {colorMode} = useColorMode()
+	const { colorMode } = useColorMode()
 	const borderIcon = {
 		light: 'gray.400',
 		dark: 'gray.500',
@@ -32,7 +32,7 @@ const Footer = (): JSX.Element => {
 						size="lg"
 						color={borderIcon[colorMode]}
 						variant="ghost"
-						_hover={{backgroundColor: footerHoverBg[colorMode]}}
+						_hover={{ backgroundColor: footerHoverBg[colorMode] }}
 					/>
 				</Link>
 				<Link
@@ -46,7 +46,7 @@ const Footer = (): JSX.Element => {
 						size="lg"
 						color={borderIcon[colorMode]}
 						variant="ghost"
-						_hover={{backgroundColor: footerHoverBg[colorMode]}}
+						_hover={{ backgroundColor: footerHoverBg[colorMode] }}
 					/>
 				</Link>
 				<Link
@@ -60,7 +60,7 @@ const Footer = (): JSX.Element => {
 						size="lg"
 						color={borderIcon[colorMode]}
 						variant="ghost"
-						_hover={{backgroundColor: footerHoverBg[colorMode]}}
+						_hover={{ backgroundColor: footerHoverBg[colorMode] }}
 					/>
 				</Link>
 			</div>

@@ -1,12 +1,12 @@
 import React from 'react'
-import {useColorMode, Button, Flex, Box} from '@chakra-ui/react'
+import { useColorMode, Button, Flex, Box } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import DarkModeSwitch from './DarkModeSwitch'
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 
 const NavigationBar = (): JSX.Element => {
-	const {colorMode} = useColorMode()
+	const { colorMode } = useColorMode()
 	const router = useRouter()
 
 	const bgColor = {
